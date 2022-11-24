@@ -1,0 +1,32 @@
+type Query {
+    artistas: [Artista]
+}
+
+type Mutation {
+    addArtista(nuevo: ArtistaInput): Artista
+    limpiarBase: String
+    borrar(idArtistaABorrar: String): String
+    borrarVarios(ids: [String]): String
+}
+
+type Artista {
+    id: ID
+    apellido: String
+    estilo: String
+}
+
+input ArtistaInput {
+    apellido: String
+    estilo: String
+}
+
+type Obra{
+    artistaId: ID
+    titulo: String
+    imagen: String
+}
+
+type Premio{
+    ano: Int
+    nombre: String
+}
